@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Continue Statement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #FFEFBA, #FFFFFF);
+        }
+        header{
+            border-bottom: 2px dotted #FF9800;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #FFEFBA, #FFFFFF);
+        }
+        header h1 {
+            color: #FF9800;
+        }
+        .content h2 {
+            color: #FF9800;
+        }
+        footer{
+            background-color: #FF9800;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Java Continue Statement</h1>
+        <p>Learn how to use the continue statement in Java with examples and detailed explanations.</p>
+    </header>
+
+    <section class="content">
+        <h2>What is the Continue Statement?</h2>
+        <p>The <strong>continue</strong> statement in Java is used to skip the current iteration of a loop and proceed to the next iteration. It is commonly used when you want to bypass specific conditions within a loop without terminating the loop entirely.</p>
+
+        <h2>Continue Statement in For Loop</h2>
+        <p>The continue statement is often used in <strong>for</strong> loops to skip certain iterations based on a condition.</p>
+
+        <h2>Example 1: Using Continue in a For Loop</h2>
+        <p>The following example demonstrates the use of the continue statement in a for loop:</p>
+        <pre><code>public class ContinueExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) {
+                continue;  // Skip the iteration when i equals 5
+            }
+            System.out.println(i);
+        }
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The loop starts from 1 and goes up to 10.</li>
+            <li>When the value of <code>i</code> reaches 5, the continue statement is executed, and the loop skips the rest of the code in that iteration.</li>
+            <li>As a result, the number 5 is not printed, and the loop continues with the next iteration.</li>
+        </ul>
+
+        <h2>Continue Statement in While Loop</h2>
+        <p>The continue statement can also be used in <strong>while</strong> loops to skip the current iteration and move to the next one.</p>
+
+        <h2>Example 2: Using Continue in a While Loop</h2>
+        <p>Here’s an example of how the continue statement is used in a while loop:</p>
+        <pre><code>public class ContinueWhileExample {
+    public static void main(String[] args) {
+        int i = 1;
+        while (i <= 10) {
+            if (i == 5) {
+                i++;
+                continue;  // Skip the iteration when i equals 5
+            }
+            System.out.println(i);
+            i++;
+        }
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The loop starts from 1 and goes up to 10.</li>
+            <li>When the value of <code>i</code> reaches 5, the continue statement is executed, skipping the rest of the code in that iteration.</li>
+            <li>The value 5 is not printed, and the loop continues with the next iteration.</li>
+        </ul>
+
+        <h2>Continue Statement in Nested Loops</h2>
+        <p>The continue statement can also be used in nested loops to skip the current iteration of the inner loop while continuing the outer loop.</p>
+
+        <h2>Example 3: Continue in Nested Loops</h2>
+        <p>In this example, the continue statement is used within nested loops:</p>
+        <pre><code>public class NestedLoopContinueExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    continue;  // Skip the iteration when i equals 2 and j equals 2
+                }
+                System.out.println("i = " + i + ", j = " + j);
+            }
+        }
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The outer loop runs for <code>i</code> from 1 to 3, and the inner loop runs for <code>j</code> from 1 to 3.</li>
+            <li>When <code>i</code> equals 2 and <code>j</code> equals 2, the continue statement is executed, skipping the iteration of the inner loop.</li>
+            <li>The output will skip the case where <code>i = 2</code> and <code>j = 2</code>.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>The continue statement in Java is a useful tool that allows you to skip certain iterations of a loop based on specific conditions. It helps in making your loops more flexible and efficient by enabling you to bypass unnecessary code within loops.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+    <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+    <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+            
+            <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Java_Break.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Java_Comments.html'">Next</button>
+        
+    
+
+    <footer>
+        <p>Keep practicing to understand the flow control statements in Java more deeply.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Java Program</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+</head>
+<body>
+    <div class="background">
+        <div class="gradient"></div>
+        
+    </div>
+
+    <header>
+        <h1>Hello Java Program</h1>
+        <p>Let's start with a simple Java program to print "Hello, Java!" to the console.</p>
+    </header>
+
+    <section class="content">
+        <h2>Understanding the Code</h2>
+        <p>This is one of the most basic Java programs. It prints "Hello, Java!" to the console when executed. Below is the code, followed by an explanation of each part.</p>
+
+        <div class="code-block">
+            <pre>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+            </pre>
+        </div>
+
+        <h2>Code Explanation</h2>
+        <ul>
+            <li><strong>public class HelloWorld</strong>: This declares a public class named <code>HelloWorld</code>. In Java, every application begins with a class declaration.</li>
+            <li><strong>public static void main(String[] args)</strong>: This is the entry point of the application. The <code>main</code> method is called by the JVM when the program starts.</li>
+            <li><strong>System.out.println("Hello, Java!");</strong>: This statement prints the text "Hello, Java!" to the console. <code>System.out</code> is used to output text to the console, and <code>println</code> is a method that prints the specified text followed by a new line.</li>
+        </ul>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Comparing_Java_with_Other_Programming_Languages.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Program_Internal.html'">Next</button>
+
+
+    <footer>
+        <p>Created with ♥ to help you start your journey in Java programming.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

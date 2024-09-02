@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java If-Else Statement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e1e2fe, #b2b8f2);
+        }
+        header{
+            border-bottom: 2px dotted #023dd1;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #e1e2fe, #b2b8f2);
+        }
+        header h1 {
+            color: #023dd1;
+        }
+        .content h2 {
+            color: #023dd1;
+        }
+        footer{
+            background-color: #023dd1;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java If-Else Statement</h1>
+        <p>Understand conditional decision-making in Java using the if-else statement.</p>
+    </header>
+
+    <section class="content">
+        <h2>What is an If-Else Statement?</h2>
+        <p>The <strong>if-else statement</strong> in Java is a conditional control structure that allows your program to make decisions and execute certain blocks of code based on the outcome of a condition. It is one of the most fundamental aspects of controlling the flow of a program.</p>
+
+        <h2>Syntax of If-Else Statement</h2>
+        <pre><code>if (condition) {
+    // block of code to be executed if the condition is true
+} else {
+    // block of code to be executed if the condition is false
+}</code></pre>
+
+        <h2>Example 1: Basic If-Else Statement</h2>
+        <p>In the following example, the program checks if a number is even or odd using the if-else statement:</p>
+        <pre><code>public class IfElseExample {
+    public static void main(String[] args) {
+        int number = 10;
+
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+    }
+}</code></pre>
+
+        <h2>Example 2: Nested If-Else Statement</h2>
+        <p>You can also nest if-else statements to check multiple conditions. Here is an example:</p>
+        <pre><code>public class NestedIfElseExample {
+    public static void main(String[] args) {
+        int number = 10;
+
+        if (number > 0) {
+            if (number % 2 == 0) {
+                System.out.println(number + " is positive and even.");
+            } else {
+                System.out.println(number + " is positive but odd.");
+            }
+        } else {
+            System.out.println(number + " is not positive.");
+        }
+    }
+}</code></pre>
+
+        <h2>Example 3: If-Else Ladder</h2>
+        <p>The if-else ladder is used when there are multiple conditions to be checked. Here's an example:</p>
+        <pre><code>public class IfElseLadderExample {
+    public static void main(String[] args) {
+        int marks = 75;
+
+        if (marks >= 90) {
+            System.out.println("Grade: A+");
+        } else if (marks >= 80) {
+            System.out.println("Grade: A");
+        } else if (marks >= 70) {
+            System.out.println("Grade: B+");
+        } else if (marks >= 60) {
+            System.out.println("Grade: B");
+        } else {
+            System.out.println("Grade: C");
+        }
+    }
+}</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>The if-else statement is an essential control structure in Java that allows you to control the flow of your program based on conditions. Mastering this concept is crucial for making logical decisions in your code.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Control_Statement-intro.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Java_Switch.html'">Next</button>
+
+
+    <footer>
+        <p>Keep exploring Java to build your programming skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Virtual Machine (JVM)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    
+    <style>
+        body {
+            background: linear-gradient(to bottom, #eee1fe, #deb2f2);
+        }
+        header{
+            border-bottom: 2px dotted #d102ab;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #eee1fe, #deb2f2);
+        }
+        header h1 {
+            color: #d102ab;
+        }
+        .content h2 {
+            color: #d102ab;
+        }
+        footer{
+            background-color: #d102ab;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="gradient"></div>
+        <div class="floating-icons">
+            <img src="https://example.com/jvm-icon.png" alt="JVM Icon" class="icon-1">
+            <img src="https://example.com/java-logo.png" alt="Java Logo" class="icon-2">
+        </div>
+    </div>
+
+    <header>
+        <h1>Java Virtual Machine (JVM)</h1>
+        <p>The core component that enables Java's "Write Once, Run Anywhere" capability.</p>
+    </header>
+
+    <section class="content">
+        <h2>What is JVM?</h2>
+        <p>The Java Virtual Machine (JVM) is an abstract machine that provides a runtime environment for Java bytecode to be executed. It acts as an intermediary between the Java bytecode and the underlying hardware, making Java platform-independent.</p>
+
+        <h2>Key Functions of JVM</h2>
+        <ul>
+            <li><strong>Class Loader:</strong> The class loader loads class files into the JVM. It retrieves classes from the file system or network and loads them into memory.</li>
+            <li><strong>Bytecode Verifier:</strong> This component checks the loaded bytecode to ensure it is safe to execute. It verifies that the code adheres to Java's security constraints.</li>
+            <li><strong>Interpreter:</strong> The interpreter reads and executes bytecode instructions one at a time. While slower than compiled execution, it allows for portability.</li>
+            <li><strong>Just-In-Time (JIT) Compiler:</strong> The JIT compiler enhances performance by compiling bytecode into native machine code at runtime. This allows the code to run faster than interpreted code.</li>
+            <li><strong>Garbage Collector:</strong> The garbage collector automatically manages memory by deallocating objects that are no longer in use, preventing memory leaks and optimizing memory usage.</li>
+        </ul>
+
+        <h2>JVM Architecture</h2>
+        <p>The JVM is divided into three main subsystems:</p>
+        <ul>
+            <li><strong>Class Loader Subsystem:</strong> Loads, links, and initializes classes during runtime.</li>
+            <li><strong>Runtime Data Areas:</strong> Includes areas like the method area, heap, stack, program counter register, and native method stack, where data is stored during execution.</li>
+            <li><strong>Execution Engine:</strong> Executes bytecode using the interpreter or JIT compiler, and includes the garbage collector for memory management.</li>
+        </ul>
+
+        <h2>Benefits of JVM</h2>
+        <ul>
+            <li><strong>Platform Independence:</strong> JVM allows Java programs to run on any device or operating system that has a compatible JVM installed.</li>
+            <li><strong>Security:</strong> The JVM's bytecode verification and security features help prevent malicious code from being executed.</li>
+            <li><strong>Performance Optimization:</strong> The JIT compiler and garbage collector improve the performance and efficiency of Java applications.</li>
+            <li><strong>Memory Management:</strong> Automatic memory management through garbage collection ensures efficient use of memory resources.</li>
+        </ul>
+
+        <h2>How JVM Works</h2>
+        <p>When a Java program is executed, the following steps occur:</p>
+        <ol>
+            <li>The Java compiler (javac) compiles the source code into bytecode.</li>
+            <li>The bytecode is loaded into the JVM by the class loader.</li>
+            <li>The JVM's execution engine interprets or compiles the bytecode into native machine code.</li>
+            <li>The program is executed on the underlying hardware.</li>
+            <li>The garbage collector manages memory by removing unused objects.</li>
+        </ol>
+    </section>
+     <!-- Audio Control -->
+     <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='JDK_JRE_JVM.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Java_Variables.html'">Next</button>
+
+
+    <footer>
+        <p>Understanding the JVM is crucial for Java developers as it forms the foundation for Java's platform independence, security, and performance.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

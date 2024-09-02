@@ -1,0 +1,231 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #c3cfe2, #cfd9df);
+}
+
+/* Background Styling with Animated Icons */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #c3cfe2, #cfd9df);
+    z-index: 1;
+}
+
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.floating-icons .icon-1, .floating-icons .icon-2 {
+    position: absolute;
+    width: 80px;
+    animation: float 10s infinite ease-in-out;
+}
+
+.floating-icons .icon-1 {
+    top: 20%;
+    left: 10%;
+}
+
+.floating-icons .icon-2 {
+    top: 60%;
+    left: 70%;
+    width: 100px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px dotted #3b6978;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 4;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #3b6978;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Comparison Table Styling */
+.comparison-table {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 4;
+}
+
+table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+thead {
+    background-color: #3b6978;
+    color: #fff;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+td {
+    font-size: 1rem;
+    color: #555;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3b6978;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin: 20px;
+    position: relative;
+    z-index: 4;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Audio Control */
+.audio-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.audio-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.audio-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cancel-audio {
+    top: 80px;
+    right: 25px;
+    display: none;
+}
+
+/* Buttons Styling */
+button {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    position: fixed;
+    z-index: 1000;
+}
+
+#next-btn {
+    background-color: #6a82fb;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    bottom: 20px;
+    right: 20px;
+}
+
+#next-btn:hover {
+    background-color: #fc5c7d;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+#prev-btn {
+    background-color: #ff9a9e;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    bottom: 20px;
+    left: 20px;
+}
+
+#prev-btn:hover {
+    background-color: #fc5c7d;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

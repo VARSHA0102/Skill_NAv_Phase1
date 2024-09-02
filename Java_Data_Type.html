@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Data Types</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f8fee1, #eef2b2);
+        }
+        header{
+            border-bottom: 2px dotted #d1d102;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #f8fee1, #eef2b2);
+        }
+        header h1 {
+            color: #d1d102;
+        }
+        .content h2 {
+            color: #d1d102;
+        }
+        footer{
+            background-color: #d1d102;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+    </style>
+</head>
+<body>
+    <header id="page-header">
+        <h1>Java Data Types</h1>
+        <p>An overview of different data types in Java and their uses.</p>
+    </header>
+
+    <section class="content" id="content-area">
+        <h2>What are Data Types in Java?</h2>
+        <p>In Java, data types specify the size and type of values that can be stored in a variable. Java is a strongly typed language, meaning that every variable must be declared with a data type.</p>
+
+        <h2>Primitive Data Types</h2>
+        <p>Java has eight built-in primitive data types:</p>
+        <ul>
+            <li><strong>byte:</strong> 8-bit signed integer. Range: -128 to 127.</li>
+            <li><strong>short:</strong> 16-bit signed integer. Range: -32,768 to 32,767.</li>
+            <li><strong>int:</strong> 32-bit signed integer. Range: -2<sup>31</sup> to 2<sup>31</sup>-1.</li>
+            <li><strong>long:</strong> 64-bit signed integer. Range: -2<sup>63</sup> to 2<sup>63</sup>-1.</li>
+            <li><strong>float:</strong> 32-bit floating-point number.</li>
+            <li><strong>double:</strong> 64-bit floating-point number.</li>
+            <li><strong>char:</strong> 16-bit Unicode character.</li>
+            <li><strong>boolean:</strong> Represents two values: true or false.</li>
+        </ul>
+
+        <h2>Non-Primitive Data Types</h2>
+        <p>Non-primitive data types in Java are objects and can be created using constructors. They include:</p>
+        <ul>
+            <li><strong>String:</strong> Represents a sequence of characters.</li>
+            <li><strong>Arrays:</strong> A collection of elements of the same type.</li>
+            <li><strong>Classes:</strong> Blueprints for creating objects.</li>
+            <li><strong>Interfaces:</strong> Abstract types used to specify behavior that classes must implement.</li>
+        </ul>
+
+        <h2>Examples</h2>
+        <h3>Primitive Data Type Example</h3>
+        <pre><code>public class DataTypeExample {
+    public static void main(String[] args) {
+        int num = 10;
+        char letter = 'A';
+        boolean flag = true;
+
+        System.out.println("Number: " + num);
+        System.out.println("Letter: " + letter);
+        System.out.println("Boolean: " + flag);
+    }
+}</code></pre>
+
+        <h3>Non-Primitive Data Type Example</h3>
+        <pre><code>public class NonPrimitiveExample {
+    public static void main(String[] args) {
+        String greeting = "Hello, World!";
+        int[] numbers = {1, 2, 3, 4, 5};
+
+        System.out.println(greeting);
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+}</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>Understanding data types is fundamental to programming in Java. They help in utilizing memory efficiently and ensuring data integrity within the program.</p>
+    </section>
+
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Java_Variables.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Unicode_System.html'">Next</button>
+
+
+
+    <footer>
+        <p>Explore more about Java to deepen your understanding and improve your coding skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

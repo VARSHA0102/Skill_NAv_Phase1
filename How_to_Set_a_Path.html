@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Set a Path in Java</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f9e6ff, #c7d2fe);
+        }
+        header{
+            border-bottom: 2px dotted #7c4dff;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #f9e6ff, #c7d2fe);
+        }
+        header h1 {
+            color: #7c4dff;
+        }
+        .content h2 {
+            color: #7c4dff;
+        }
+        footer{
+            background-color: #7c4dff;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="gradient"></div>
+        
+    </div>
+
+    <header>
+        <h1>How to Set a Path in Java</h1>
+        <p>Learn how to configure the PATH variable for running Java programs from the command line.</p>
+    </header>
+
+    <section class="content">
+        <h2>Why Set the PATH Variable?</h2>
+        <p>The PATH variable is an environment variable used to specify the location where the system can find executables like the Java compiler (`javac`) and the Java runtime (`java`). Setting the PATH allows you to run Java commands from any directory without having to specify the full path to the executable.</p>
+
+        <h2>Steps to Set the PATH Variable</h2>
+
+        <h3>1. Find the Java Installation Directory</h3>
+        <p>Before setting the PATH, you need to know where Java is installed on your system. Typically, Java is installed in a directory like `C:\Program Files\Java\jdkx.x.x_xx` on Windows or `/usr/lib/jvm/java-x-openjdk` on Linux.</p>
+
+        <h3>2. Copy the Path to the `bin` Directory</h3>
+        <p>Inside the Java installation directory, you'll find a `bin` folder that contains the Java executables. Copy the path to this directory. For example, on Windows, it might look like `C:\Program Files\Java\jdk-18.0.1\bin`.</p>
+
+        <h3>3. Set the PATH Variable on Windows</h3>
+        <p>Follow these steps to set the PATH variable on Windows:</p>
+        <ol>
+            <li>Right-click on `This PC` or `My Computer` and select `Properties`.</li>
+            <li>Click on `Advanced system settings`.</li>
+            <li>In the System Properties window, click on the `Environment Variables` button.</li>
+            <li>In the Environment Variables window, find the `Path` variable under `System variables`, select it, and click `Edit`.</li>
+            <li>Click `New` and paste the path to the Java `bin` directory you copied earlier.</li>
+            <li>Click `OK` to close all windows.</li>
+        </ol>
+
+        <h3>4. Set the PATH Variable on Linux/Mac</h3>
+        <p>To set the PATH variable on Linux or Mac, you'll need to edit the `.bashrc`, `.bash_profile`, or `.zshrc` file in your home directory:</p>
+        <ol>
+            <li>Open a terminal and type `nano ~/.bashrc` or `nano ~/.bash_profile` for bash, or `nano ~/.zshrc` for zsh.</li>
+            <li>Add the following line to the end of the file:<br>
+                <code>export PATH=$PATH:/path/to/java/bin</code></li>
+            <li>Save the file and exit the editor.</li>
+            <li>Run `source ~/.bashrc` or `source ~/.bash_profile` (or `source ~/.zshrc` for zsh) to apply the changes.</li>
+        </ol>
+
+        <h3>5. Verify the PATH is Set Correctly</h3>
+        <p>To verify that the PATH is set correctly, open a new command prompt or terminal window and type:</p>
+        <code>java -version</code>
+        <p>If the PATH is set correctly, you should see the Java version installed on your system.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Hello_Java_Program.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='JDK_JRE_JVM.html'">Next</button>
+
+
+    <footer>
+        <p>Now you can run Java programs from any directory in your system. Happy coding!</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

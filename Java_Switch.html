@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Switch Statement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e1fafe, #b2f2ee);
+        }
+        header{
+            border-bottom: 2px dotted #02cad1;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #e1fafe, #b2f2ee);
+        }
+        header h1 {
+            color: #02cad1;
+        }
+        .content h2 {
+            color: #02cad1;
+        }
+        footer{
+            background-color: #02cad1;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Java Switch Statement</h1>
+        <p>Learn how to control program flow with the switch statement in Java.</p>
+    </header>
+
+    <section class="content">
+        <h2>What is a Switch Statement?</h2>
+        <p>The <strong>switch statement</strong> in Java is a control structure that allows a variable to be tested for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each case.</p>
+
+        <h2>Syntax of Switch Statement</h2>
+        <pre><code>switch (expression) {
+    case value1:
+        // code block
+        break;
+    case value2:
+        // code block
+        break;
+    // you can have any number of case statements
+    default:
+        // default code block
+}</code></pre>
+
+        <h2>Example 1: Basic Switch Statement</h2>
+        <p>Here is a simple example of using the switch statement to determine the day of the week:</p>
+        <pre><code>public class SwitchExample {
+    public static void main(String[] args) {
+        int day = 3;
+        String dayName;
+
+        switch (day) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            case 7:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Invalid day";
+                break;
+        }
+        System.out.println("The day is " + dayName);
+    }
+}</code></pre>
+
+        <h2>Example 2: Switch Statement with Strings</h2>
+        <p>Starting from Java 7, you can use strings in the switch statement. Here’s an example:</p>
+        <pre><code>public class SwitchWithString {
+    public static void main(String[] args) {
+        String role = "admin";
+
+        switch (role) {
+            case "admin":
+                System.out.println("Access granted to admin.");
+                break;
+            case "moderator":
+                System.out.println("Access granted to moderator.");
+                break;
+            case "user":
+                System.out.println("Access granted to user.");
+                break;
+            default:
+                System.out.println("No access granted.");
+                break;
+        }
+    }
+}</code></pre>
+
+        <h2>Example 3: Switch Statement Without Break</h2>
+        <p>If you omit the <code>break</code> statement, the program continues with the next case. Here’s an example:</p>
+        <pre><code>public class SwitchWithoutBreak {
+    public static void main(String[] args) {
+        int day = 2;
+
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+            case 2:
+                System.out.println("Tuesday");
+            case 3:
+                System.out.println("Wednesday");
+            case 4:
+                System.out.println("Thursday");
+            default:
+                System.out.println("Another day");
+        }
+    }
+}</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>The switch statement is a powerful tool in Java that simplifies the process of selecting a code block to be executed based on a value. It's particularly useful when you have multiple conditions that depend on the value of a single variable.</p>
+    </section>
+        <!-- Audio Control -->
+        <div class="audio-control">
+            <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+            <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button id="prev-btn" class="btn animate-button" onclick="location.href='Java_if-else.html'">Preview Page</button>
+        <button id="next-btn" class="btn animate-button" onclick="location.href='Java_For_Loop.html'">Next</button>
+    
+
+    <footer>
+        <p>Explore more Java concepts to enhance your coding skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

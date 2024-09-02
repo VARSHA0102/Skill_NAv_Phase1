@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Comments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom,  #E0C3FC, #8EC5FC);
+        }
+        header{
+            border-bottom: 2px dotted #8EC5FC;
+        }
+        .gradient {
+            background: linear-gradient(to bottom,  #E0C3FC, #8EC5FC);
+        }
+        header h1 {
+            color: #8EC5FC;
+        }
+        .content h2 {
+            color: #8EC5FC;
+        }
+        footer{
+            background-color: #8EC5FC;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Java Comments</h1>
+        <p>Understand the importance of comments in Java and how to use them effectively.</p>
+    </header>
+
+    <section class="content">
+        <h2>What are Comments in Java?</h2>
+        <p>Comments in Java are non-executable statements that are used to explain the code. They are ignored by the Java compiler and are meant to make the code easier to understand for developers. Comments can be used to provide context, describe the purpose of a code block, or temporarily disable code.</p>
+
+        <h2>Types of Comments in Java</h2>
+        <p>There are three types of comments in Java:</p>
+        <ul>
+            <li><strong>Single-line comments</strong></li>
+            <li><strong>Multi-line comments</strong></li>
+            <li><strong>Documentation comments (Javadoc)</strong></li>
+        </ul>
+
+        <h3>1. Single-line Comments</h3>
+        <p>Single-line comments start with two forward slashes <code>//</code> and extend to the end of the line. They are used for short explanations or notes within the code.</p>
+        <pre><code>// This is a single-line comment
+int x = 5;  // Declare a variable x and assign it the value 5</code></pre>
+
+        <h3>2. Multi-line Comments</h3>
+        <p>Multi-line comments start with <code>/*</code> and end with <code>*/</code>. They are used for longer explanations or to comment out blocks of code.</p>
+        <pre><code>/*
+This is a multi-line comment.
+It can span multiple lines.
+*/
+int y = 10;  // Declare a variable y and assign it the value 10</code></pre>
+
+        <h3>3. Documentation Comments (Javadoc)</h3>
+        <p>Documentation comments are used to generate API documentation and start with <code>/**</code> and end with <code>*/</code>. These comments typically include tags like <code>@param</code>, <code>@return</code>, and <code>@see</code>.</p>
+        <pre><code>/**
+ * This method adds two numbers and returns the sum.
+ * @param a the first number
+ * @param b the second number
+ * @return the sum of a and b
+ */
+public int add(int a, int b) {
+    return a + b;
+}</code></pre>
+
+        <h2>Best Practices for Writing Comments</h2>
+        <p>Here are some best practices for writing comments in Java:</p>
+        <ul>
+            <li>Use comments to explain why certain decisions were made, rather than stating the obvious.</li>
+            <li>Keep comments up to date as the code changes.</li>
+            <li>Don’t over-comment; code should be self-explanatory where possible.</li>
+            <li>Use documentation comments for public APIs to provide useful information to developers.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Comments are an essential part of writing maintainable and understandable code. By using single-line, multi-line, and documentation comments effectively, you can make your Java code more readable and easier to work with for yourself and others.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+        </div>
+                
+                <!-- Navigation Buttons -->
+        <button id="prev-btn" class="btn animate-button" onclick="location.href='Java_Continue.html'">Preview Page</button>
+        <button id="next-btn" class="btn animate-button" onclick="location.href='Recap_Control_Statement.html'">Next</button>
+            
+        
+
+    <footer>
+        <p>Happy Coding! Remember to comment wisely.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

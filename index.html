@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBR Academy - Do it now</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">BBR Academy</div>
+        <nav class="nav">
+            <a href="#">About</a>
+            <a href="#">My Dashboard</a>
+            <a href="#">Problem Statement</a>
+            <a href="#">Leader Board</a>
+        </nav>
+        <button class="signin-btn">Login</button>
+    </header>
+
+    <section class="hero">
+        <h1>Skill Up! Level Up!!</h1>
+        <p>Here you can learn what you like. Don't worry about the concept; we make it easy.</p>
+        <button class="start-btn">Explore</button>
+        <img src="images/front-pg1.png" alt="Hero Image" class="hero-image">
+        <img src="images/front-pg2.png" alt="Hero Image" class="hero-image2">
+    </section>
+
+    <section class="syllabus">
+        <h2>Syllabus of Courses</h2>
+        <div class="syllabus-items">
+            <div onclick="location.href='javaLearningPath.html'" id="java-section" class="syllabus-item">
+                <img src="images/java-logo.png" alt="Java Logo">
+                <h3>BBR01</h3>
+                <h4>JAVA</h4>
+                <p>Our core Java programming tutorial is designed for students and working professionals. Java is an object-oriented, class-based, concurrent, secured and general-purpose computer-programming language. It is a widely used robust technology.</p>
+            </div>
+            <div id="net-section" class="syllabus-item" onclick="location.href='dotNetLearningPath.html'">
+                <img src="images/dotnet-logo.png" alt=".NET Logo">
+                <h3>BBR02</h3>
+                <h4>.NET</h4>
+                <p>. NET is an open-source platform for building desktop, web, and mobile applications that can run natively on any operating system. The . NET system includes tools, libraries, and languages that support modern, scalable, and high-performance software development.</p>
+            </div>
+            <div id="ds-section" class="syllabus-item" onclick="location.href='DeLearningPath.html'">
+                <img src="images/de-logo.jpeg" alt="Data Engineering Logo">
+                <h3>BBR03</h3>
+                <h4>DATA ENGINEERING</h4>
+                <p>Data engineering is the discipline which creates data collection, storage, transformation, and analysis processes for large amounts of raw data, structured data, semi-structured data, and unstructured data (e.g., Big Data) so that data science professionals can draw valuable insights from it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Course Procedure Section -->
+    <section class="course-procedure">
+        <div class="left-content">
+            <p>Hello! I'm Guve, your reading assistant. It's nice to meet you in the BBR Learning Academy. When you see my icon, feel free to click on it, and I'll be happy to read the page for you.
+
+                Welcome to our course! To get started, please sign up. During the signup process, you'll have the option to choose which course you'd like to take. If you're unsure about which course suits you best, I'm here to help. Based on your interests and preferences, I can recommend a course that aligns with your goals.
+                
+                Let's get started on this learning journey together! </p>
+        </div>
+        <div class="procedure-image-container">
+            <img src="images/audio-char.jpg" alt="Center Image" class="center-image">
+            <div class="animated-box" style="top: 10%; left: -80px;">Sign Up</div>
+            <div class="animated-box" style="top: 50%; left: -120px;">Choose Course</div>
+            <div class="animated-box" style="top: 90%; left: -80px;">Start Learning</div>
+            <div class="animated-box" style="top: 30%; right: -100px;">Practice</div>
+            <div class="animated-box" style="top: 70%; right: -120px;">Complete Project</div>
+            <div class="animated-box" style="top: 10%; right: -80px;">Get Certified</div>
+        </div>
+        <div class="right-content">
+            Welcome to the course! We encourage you to take your time to thoroughly understand each concept. If you encounter any difficulties or have questions, please don't hesitate to submit them through the feedback form. Our team will respond promptly to address your queries.
+
+            To reinforce your learning, practice the questions provided in each module. Your progress will be tracked as follows:
+            
+            - Completing one topic: 1 point
+            - Solving problems: 5 points
+            
+            You can monitor your score on the leaderboard, which displays rankings and scores for all participants. Upon completing the course, you will receive a certificate of completion.
+            
+            Remember, practice is key to mastering the material. Take your time, and don't hesitate to reach out if you need assistance. Good luck!        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

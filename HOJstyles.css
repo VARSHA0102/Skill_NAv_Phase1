@@ -1,0 +1,264 @@
+/* General Styling */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+
+/* Background Styling with Animation */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Gradient Layer */
+.gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffdde1, #b5fffc);
+    z-index: 1;
+}
+
+/* Cloud Animation */
+.clouds {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url('images/clouds.jpeg') repeat-x;
+    animation: moveClouds 60s linear infinite;
+    z-index: 2;
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Star Twinkling Animation */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('images/stars.jpeg') repeat;
+    animation: twinklingStars 100s linear infinite;
+    z-index: 3;
+}
+
+@keyframes twinklingStars {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px dotted #fda085;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 4;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #ff6f61;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Timeline Styling */
+.timeline {
+    padding: 40px 20px;
+    position: relative;
+    z-index: 4;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: scale(1.05);
+}
+
+.timeline-icon img {
+    width: 80px;
+    margin-right: 20px;
+}
+
+.timeline-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #ff6f61;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    border-top: 2px dotted #fda085;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    position: relative;
+    z-index: 4;
+}
+
+.fun-facts h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #ff6f61;
+}
+
+.fun-facts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fun-facts li {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff6f61;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin: 20px;
+    position: relative;
+    z-index: 4;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Buttons Styling */
+button {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    position: fixed;
+    z-index: 1000;
+}
+
+#next-btn {
+    background-color: #6a82fb;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    bottom: 20px;
+    right: 20px;
+}
+
+#next-btn:hover {
+    background-color: #fc5c7d;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+#prev-btn {
+    background-color: #ff9a9e;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    bottom: 20px;
+    left: 20px;
+}
+
+#prev-btn:hover {
+    background-color: #fc5c7d;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Audio Control */
+.audio-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.audio-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.audio-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cancel-audio {
+    top: 80px;
+    right: 25px;
+    display: none;
+}

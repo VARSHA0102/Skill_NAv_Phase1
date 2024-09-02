@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Operators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #feece1, #f2cab2);
+        }
+        header{
+            border-bottom: 2px dotted #d16d02;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #feece1, #f2cab2);
+        }
+        header h1 {
+            color: #d16d02;
+        }
+        .content h2 {
+            color: #d16d02;
+        }
+        footer{
+            background-color: #d16d02;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+    </style>
+</head>
+<body>
+    <header id="page-header">
+        <h1>Java Operators</h1>
+        <p>Understanding different types of operators in Java and their usage.</p>
+    </header>
+
+    <section class="content" id="content-area">
+        <h2>What are Operators?</h2>
+        <p>Operators in Java are special symbols or keywords that perform operations on variables and values. They are used to manipulate data and perform operations such as arithmetic, comparison, and logical operations.</p>
+
+        <h2>Types of Operators</h2>
+        <p>Java provides several types of operators, each serving a different purpose:</p>
+
+        <h3>1. Arithmetic Operators</h3>
+        <p>Arithmetic operators are used to perform mathematical operations on numeric values.</p>
+        <ul>
+            <li><strong>Addition (+):</strong> Adds two operands. <code>a + b</code></li>
+            <li><strong>Subtraction (-):</strong> Subtracts the second operand from the first. <code>a - b</code></li>
+            <li><strong>Multiplication (*):</strong> Multiplies two operands. <code>a * b</code></li>
+            <li><strong>Division (/):</strong> Divides the first operand by the second. <code>a / b</code></li>
+            <li><strong>Modulus (%):</strong> Returns the remainder of the division. <code>a % b</code></li>
+        </ul>
+        <pre><code>public class ArithmeticOperators {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+        System.out.println("Addition: " + (a + b));       // 15
+        System.out.println("Subtraction: " + (a - b));    // 5
+        System.out.println("Multiplication: " + (a * b)); // 50
+        System.out.println("Division: " + (a / b));       // 2
+        System.out.println("Modulus: " + (a % b));        // 0
+    }
+}</code></pre>
+
+        <h3>2. Relational Operators</h3>
+        <p>Relational operators are used to compare two values or expressions and return a boolean result.</p>
+        <ul>
+            <li><strong>Equal to (==):</strong> Checks if two operands are equal. <code>a == b</code></li>
+            <li><strong>Not equal to (!=):</strong> Checks if two operands are not equal. <code>a != b</code></li>
+            <li><strong>Greater than (>):</strong> Checks if the first operand is greater than the second. <code>a > b</code></li>
+            <li><strong>Less than (<):</strong> Checks if the first operand is less than the second. <code>a < b</code></li>
+            <li><strong>Greater than or equal to (>=):</strong> Checks if the first operand is greater than or equal to the second. <code>a >= b</code></li>
+            <li><strong>Less than or equal to (<=):</strong> Checks if the first operand is less than or equal to the second. <code>a <= b</code></li>
+        </ul>
+        <pre><code>public class RelationalOperators {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+        System.out.println("a == b: " + (a == b)); // false
+        System.out.println("a != b: " + (a != b)); // true
+        System.out.println("a > b: " + (a > b));   // true
+        System.out.println("a < b: " + (a < b));   // false
+        System.out.println("a >= b: " + (a >= b)); // true
+        System.out.println("a <= b: " + (a <= b)); // false
+    }
+}</code></pre>
+
+        <h3>3. Logical Operators</h3>
+        <p>Logical operators are used to combine multiple boolean expressions or values.</p>
+        <ul>
+            <li><strong>Logical AND (&&):</strong> Returns true if both operands are true. <code>a && b</code></li>
+            <li><strong>Logical OR (||):</strong> Returns true if at least one of the operands is true. <code>a || b</code></li>
+            <li><strong>Logical NOT (!):</strong> Returns true if the operand is false. <code>!a</code></li>
+        </ul>
+        <pre><code>public class LogicalOperators {
+    public static void main(String[] args) {
+        boolean a = true, b = false;
+        System.out.println("a && b: " + (a && b)); // false
+        System.out.println("a || b: " + (a || b)); // true
+        System.out.println("!a: " + (!a));         // false
+    }
+}</code></pre>
+
+        <h3>4. Assignment Operators</h3>
+        <p>Assignment operators are used to assign values to variables and perform operations in a single step.</p>
+        <ul>
+            <li><strong>Assignment (=):</strong> Assigns a value to a variable. <code>a = b</code></li>
+            <li><strong>Addition Assignment (+=):</strong> Adds and assigns a value to a variable. <code>a += b</code></li>
+            <li><strong>Subtraction Assignment (-=):</strong> Subtracts and assigns a value to a variable. <code>a -= b</code></li>
+            <li><strong>Multiplication Assignment (*=):</strong> Multiplies and assigns a value to a variable. <code>a *= b</code></li>
+            <li><strong>Division Assignment (/=):</strong> Divides and assigns a value to a variable. <code>a /= b</code></li>
+            <li><strong>Modulus Assignment (%=):</strong> Calculates the modulus and assigns a value to a variable. <code>a %= b</code></li>
+        </ul>
+        <pre><code>public class AssignmentOperators {
+    public static void main(String[] args) {
+        int a = 10;
+        a += 5; // a = a + 5
+        System.out.println("Addition Assignment: " + a); // 15
+        a -= 3; // a = a - 3
+        System.out.println("Subtraction Assignment: " + a); // 12
+        a *= 2; // a = a * 2
+        System.out.println("Multiplication Assignment: " + a); // 24
+        a /= 4; // a = a / 4
+        System.out.println("Division Assignment: " + a); // 6
+        a %= 5; // a = a % 5
+        System.out.println("Modulus Assignment: " + a); // 1
+    }
+}</code></pre>
+
+        <h3>5. Unary Operators</h3>
+        <p>Unary operators operate on a single operand to perform operations such as negation, increment, and decrement.</p>
+        <ul>
+            <li><strong>Unary Plus (+):</strong> Indicates a positive value. <code>+a</code></li>
+            <li><strong>Unary Minus (-):</strong> Negates a value. <code>-a</code></li>
+            <li><strong>Increment (++):</strong> Increases a value by 1. <code>++a</code></li>
+            <li><strong>Decrement (--):</strong> Decreases a value by 1. <code>--a</code></li>
+            <li><strong>Logical NOT (!):</strong> Inverts a boolean value. <code>!a</code></li>
+        </ul>
+        <pre><code>public class UnaryOperators {
+    public static void main(String[] args) {
+        int a = 10;
+        System.out.println("Unary Plus: " + (+a)); // 10
+        System.out.println("Unary Minus: " + (-a)); // -10
+        System.out.println("Increment: " + (++a)); // 11
+        System.out.println("Decrement: " + (--a)); // 10
+        boolean b = true;
+        System.out.println("Logical NOT: " + (!b)); // false
+    }
+}</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>Operators are fundamental to programming in Java. They allow you to perform operations on data, compare values, and make decisions. Understanding and using operators effectively is essential for writing efficient and functional Java code.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Unicode_System.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Keywords.html'">Next</button>
+
+
+    <footer>
+        <p>Explore more about Java programming concepts and enhance your coding skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

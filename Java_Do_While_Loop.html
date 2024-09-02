@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Do-While Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ebfee1, #c8f2b2);
+        }
+        header{
+            border-bottom: 2px dotted #1ad102;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #ebfee1, #c8f2b2);
+        }
+        header h1 {
+            color: #1ad102;
+        }
+        .content h2 {
+            color: #1ad102;
+        }
+        footer{
+            background-color: #1ad102;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Java Do-While Loop</h1>
+        <p>Understanding the do-while loop in Java with examples and explanations.</p>
+    </header>
+
+    <section class="content">
+        <h2>What is a Do-While Loop?</h2>
+        <p>A <strong>do-while loop</strong> is similar to a while loop, but with one key difference: the code block inside the loop is executed at least once before the condition is tested.</p>
+
+        <h2>Syntax of Do-While Loop</h2>
+        <pre><code>do {
+    // code to be executed
+} while (condition);</code></pre>
+
+        <h2>Example 1: Basic Do-While Loop</h2>
+        <p>Here’s a simple example of a do-while loop that prints numbers from 1 to 5:</p>
+        <pre><code>public class DoWhileLoopExample {
+    public static void main(String[] args) {
+        int i = 1;
+        do {
+            System.out.println(i);
+            i++;
+        } while (i <= 5);
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In the example above:</p>
+        <ul>
+            <li><strong>Code Block:</strong> <code>System.out.println(i); i++;</code> - This code is executed first.</li>
+            <li><strong>Condition:</strong> <code>i &lt;= 5</code> - After executing the code block, the condition is checked. If true, the loop runs again.</li>
+        </ul>
+
+        <h2>Example 2: Do-While Loop with User Input</h2>
+        <p>The following example demonstrates a do-while loop that keeps asking the user for input until they enter a specific value:</p>
+        <pre><code>import java.util.Scanner;
+
+public class DoWhileLoopUserInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number;
+
+        do {
+            System.out.print("Enter a number (5 to exit): ");
+            number = scanner.nextInt();
+        } while (number != 5);
+
+        System.out.println("You entered 5. Exiting...");
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The code block inside the <code>do</code> runs first, asking the user for a number.</li>
+            <li>The condition is then checked. If the number is not 5, the loop runs again.</li>
+            <li>When the user enters 5, the loop exits.</li>
+        </ul>
+
+        <h2>Example 3: Infinite Do-While Loop</h2>
+        <p>Here’s an example of an infinite do-while loop:</p>
+        <pre><code>public class InfiniteDoWhileLoop {
+    public static void main(String[] args) {
+        do {
+            System.out.println("This loop will run forever...");
+        } while (true);
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example, the condition is always true (<code>while (true)</code>), so the loop will run indefinitely until the program is manually terminated.</p>
+
+        <h2>Conclusion</h2>
+        <p>The do-while loop ensures that the code block is executed at least once before the condition is checked. This makes it useful in scenarios where the loop's code must be executed at least once, regardless of the condition.</p>
+    </section>
+        <!-- Audio Control -->
+        <div class="audio-control">
+            <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+            <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button id="prev-btn" class="btn animate-button" onclick="location.href='Java_For_Loop.html'">Preview Page</button>
+        <button id="next-btn" class="btn animate-button" onclick="location.href='Java_Break.html'">Next</button>
+    
+
+    <footer>
+        <p>Explore more Java loops to strengthen your programming skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

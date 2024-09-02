@@ -1,0 +1,148 @@
+body {
+    background-color: #f0f8ff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.fixed-column {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 40%; /* Adjust width as needed */
+    z-index: 1;
+    overflow: hidden;
+}
+
+.left-column {
+    left: 0;
+}
+
+.right-column {
+    right: 0;
+}
+
+.fixed-column img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 800px;
+    position: relative;
+    z-index: 2; /* Ensure content is above the background images */
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.timeline-item.left {
+    flex-direction: row-reverse;
+    text-align: right;
+    transform: translateX(-100px);
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.timeline-item.right {
+    transform: translateX(100px);
+    animation: slideInRight 1s ease-in-out;
+}
+
+.timeline-circle {
+    background-color: #00aaff;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 22px;
+    margin: 0 20px;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-circle {
+    transform: scale(1.2);
+}
+
+.timeline-content {
+    background-color: #ffffff;
+    border: 2px solid #00aaff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background-color: #00aaff;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: #00aaff;
+    top: 30px;
+    bottom: 30px;
+    z-index: 0;
+}
+
+.timeline-item.left::before {
+    right: -30px;
+}
+
+.timeline-item.right::before {
+    left: -30px;
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

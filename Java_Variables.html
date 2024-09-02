@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Variables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f0fee1, #b2f2cf);
+        }
+        header{
+            border-bottom: 2px dotted #47d102;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #f0fee1, #b2f2cf);
+        }
+        header h1 {
+            color: #47d102;
+        }
+        .content h2 {
+            color: #47d102;
+        }
+        footer{
+            background-color: #47d102;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+    </style>
+</head>
+<body>
+    <header id="page-header">
+        <h1>Java Variables</h1>
+        <p>Understanding how variables work in Java and their different types.</p>
+    </header>
+
+    <section class="content" id="content-area">
+        <h2>What are Java Variables?</h2>
+        <p>In Java, variables are used to store data that can be manipulated and used throughout the program. Each variable has a specific type that defines the kind of data it can hold.</p>
+
+        <h2>Types of Variables</h2>
+        <p>Java variables can be classified into three main types:</p>
+        <ul>
+            <li><strong>Local Variables:</strong> Variables declared inside a method, constructor, or block. They are only accessible within that method, constructor, or block.</li>
+            <li><strong>Instance Variables:</strong> Variables declared inside a class but outside any method. Each object of the class has its own copy of instance variables.</li>
+            <li><strong>Class Variables (Static Variables):</strong> Variables declared with the <code>static</code> keyword. They are shared among all instances of a class and can be accessed using the class name.</li>
+        </ul>
+
+        <h2>Declaration and Initialization</h2>
+        <p>Variables in Java must be declared before they can be used. They are declared with a type followed by a name. You can also initialize a variable at the time of declaration.</p>
+        <pre><code>int age = 25;  // Declaration and initialization
+String name;    // Declaration
+name = "Alice"; // Initialization</code></pre>
+
+        <h2>Examples</h2>
+        <h3>Local Variable Example</h3>
+        <pre><code>public class Example {
+    public void display() {
+        int localVariable = 10; // Local variable
+        System.out.println("Local Variable: " + localVariable);
+    }
+}</code></pre>
+
+        <h3>Instance Variable Example</h3>
+        <pre><code>public class Person {
+    String name; // Instance variable
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public void display() {
+        System.out.println("Name: " + name);
+    }
+}</code></pre>
+
+        <h3>Static Variable Example</h3>
+        <pre><code>public class Counter {
+    static int count = 0; // Static variable
+
+    public Counter() {
+        count++;
+    }
+
+    public void display() {
+        System.out.println("Count: " + count);
+    }
+}</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>Understanding Java variables is crucial for effective programming. Variables allow you to store and manipulate data, making your code more dynamic and flexible.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='JVM.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Java_Data_Type.html'">Next</button>
+
+
+    <footer>
+        <p>Explore more about Java programming and its concepts to enhance your skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

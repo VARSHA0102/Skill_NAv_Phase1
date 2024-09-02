@@ -1,0 +1,22 @@
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+h4 {
+    color: #ffffff;
+}
+
+textarea {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border: 1px solid #555;
+    font-family: monospace;
+}
+
+#output {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: monospace;
+    white-space: pre-wrap;
+}

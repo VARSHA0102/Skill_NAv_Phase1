@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDK, JRE, and JVM in Java</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e1f5fe, #b2ebf2);
+        }
+        header{
+            border-bottom: 2px dotted #0288d1;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #e1f5fe, #b2ebf2);
+        }
+        header h1 {
+            color: #0288d1;
+        }
+        .content h2 {
+            color: #0288d1;
+        }
+        footer{
+            background-color: #0288d1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="gradient"></div>
+    </div>
+
+    <header>
+        <h1>Understanding JDK, JRE, and JVM</h1>
+        <p>An essential guide to understanding the core components of Java programming.</p>
+    </header>
+
+    <section class="content">
+        <h2>Java Development Kit (JDK)</h2>
+        <p>The JDK is a software development kit used to develop Java applications. It includes the JRE (Java Runtime Environment), an interpreter/loader (Java), a compiler (javac), an archiver (jar), a documentation generator (Javadoc), and other tools needed for Java development.</p>
+
+        <h3>Components of JDK</h3>
+        <ul>
+            <li><strong>javac:</strong> The Java compiler, which converts source code into bytecode.</li>
+            <li><strong>java:</strong> The Java interpreter, which runs Java programs by interpreting bytecode.</li>
+            <li><strong>jar:</strong> A tool to package and unpackage Java applications.</li>
+            <li><strong>javadoc:</strong> A documentation generator tool that reads Java source code comments and generates HTML documentation.</li>
+        </ul>
+
+        <h2>Java Runtime Environment (JRE)</h2>
+        <p>The JRE provides the libraries, Java Virtual Machine (JVM), and other components to run applications written in Java. Unlike the JDK, it does not include development tools like compilers or debuggers. It's used by end-users to run Java programs on their machines.</p>
+
+        <h3>Components of JRE</h3>
+        <ul>
+            <li><strong>JVM:</strong> The heart of Java's cross-platform capabilities, it interprets the bytecode and converts it to machine-specific instructions.</li>
+            <li><strong>Core Libraries:</strong> Java class libraries that provide the standard APIs to the application.</li>
+        </ul>
+
+        <h2>Java Virtual Machine (JVM)</h2>
+        <p>The JVM is an abstract machine that provides a runtime environment in which Java bytecode can be executed. It is responsible for converting bytecode into machine code and ensuring Java applications run seamlessly across different platforms. The JVM is platform-dependent, meaning its implementation may differ across platforms, but the bytecode it executes remains the same, enabling Java's "Write Once, Run Anywhere" capability.</p>
+
+        <h3>Key Functions of JVM</h3>
+        <ul>
+            <li><strong>Class Loader:</strong> Loads class files from the file system or network.</li>
+            <li><strong>Bytecode Verifier:</strong> Checks the code fragments for illegal code that violates access rights.</li>
+            <li><strong>Interpreter:</strong> Executes the bytecode line by line.</li>
+            <li><strong>Just-In-Time (JIT) Compiler:</strong> Converts bytecode into native machine code at runtime for faster execution.</li>
+            <li><strong>Garbage Collector:</strong> Automatically manages memory by removing objects that are no longer in use.</li>
+        </ul>
+
+        <h2>How They Work Together</h2>
+        <p>When you write Java code and compile it, the Java compiler (part of the JDK) converts it into bytecode. The bytecode is platform-independent and can be run on any system that has a JRE installed. The JRE includes the JVM, which loads the bytecode, verifies it, and executes it. This layered approach ensures that Java code can run on different platforms without modification.</p>
+    </section>
+     <!-- Audio Control -->
+     <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='How_to_Set_a_Path.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='JVM.html'">Next</button>
+
+    <footer>
+        <p>Understanding the relationship between JDK, JRE, and JVM is crucial for Java developers. They form the backbone of the Java programming language, providing the tools and runtime environment needed to develop and run Java applications.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

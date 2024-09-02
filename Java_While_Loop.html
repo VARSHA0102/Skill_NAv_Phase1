@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java While Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+</head>
+<body>
+    <header>
+        <h1>Java While Loop</h1>
+        <p>Learn how to use the while loop in Java for repeated execution of code blocks.</p>
+    </header>
+
+    <section class="content">
+        <h2>What is a While Loop?</h2>
+        <p>A <strong>while loop</strong> in Java is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The loop continues to execute as long as the condition remains true.</p>
+
+        <h2>Syntax of While Loop</h2>
+        <pre><code>while (condition) {
+    // code to be executed
+}</code></pre>
+
+        <h2>Example 1: Basic While Loop</h2>
+        <p>Here’s a simple example of a while loop that prints numbers from 1 to 5:</p>
+        <pre><code>public class WhileLoopExample {
+    public static void main(String[] args) {
+        int i = 1;
+        while (i <= 5) {
+            System.out.println(i);
+            i++;
+        }
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In the example above:</p>
+        <ul>
+            <li><strong>Condition:</strong> <code>i &lt;= 5;</code> - The loop will run as long as <code>i</code> is less than or equal to 5.</li>
+            <li><strong>Code Block:</strong> <code>System.out.println(i); i++;</code> - Inside the loop, <code>i</code> is printed and then incremented by 1.</li>
+        </ul>
+
+        <h2>Example 2: While Loop with User Input</h2>
+        <p>The following example demonstrates how to use a while loop to keep asking the user for input until they enter a specific value:</p>
+        <pre><code>import java.util.Scanner;
+
+public class WhileLoopUserInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number = 0;
+
+        while (number != 5) {
+            System.out.print("Enter a number (5 to exit): ");
+            number = scanner.nextInt();
+        }
+
+        System.out.println("You entered 5. Exiting...");
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The while loop continues to ask the user for a number until they enter 5.</li>
+            <li>When the user enters 5, the loop exits and a message is displayed.</li>
+        </ul>
+
+        <h2>Example 3: Infinite While Loop</h2>
+        <p>Here’s an example of an infinite while loop:</p>
+        <pre><code>public class InfiniteWhileLoop {
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("This loop will run forever...");
+        }
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example, the condition is always true (<code>while (true)</code>), so the loop will run indefinitely until the program is terminated manually.</p>
+
+        <h2>Conclusion</h2>
+        <p>The while loop is a fundamental control structure in Java, allowing you to execute a block of code repeatedly as long as a given condition is true. It's particularly useful when the number of iterations is not known beforehand.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Java_For_Loop.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='Java_Do_While_Loop.html'">Next</button>
+
+    <footer>
+        <p>Keep exploring Java loops and enhance your coding skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

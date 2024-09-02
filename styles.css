@@ -1,0 +1,208 @@
+/* Styles for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eef2f3;
+}
+
+/* Header styles */
+.header {
+    background-color: #4c9fca;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+.nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.signin-btn {
+    background-color: white;
+    color: #4c9fca;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hero section styles */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #4c9fca, #6fc3df);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    background-color: #ffa500;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+/* Syllabus section styles */
+.syllabus {
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.syllabus h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #4c9fca;
+}
+
+.syllabus-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.syllabus-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    max-width: 300px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.syllabus-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.syllabus-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.syllabus-item h3 {
+    font-size: 24px;
+    color: #4c9fca;
+    margin: 10px 0;
+}
+
+.syllabus-item h4 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.syllabus-item p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* New Course Procedure Section Styles */
+.course-procedure {
+    padding: 50px 20px;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.procedure-image-container {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px; /* Add margin to create space between the image and content */
+}
+
+.center-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 5px solid #4c9fca;
+    position: relative;
+}
+
+.animated-box {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #4c9fca;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: moveAround 5s infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes moveAround {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.animated-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.left-content {
+    flex: 1;
+    padding-right: 50px; /* Add padding to create space between content and image */
+    margin-right: 50px; /* Add margin to create space between content and image */
+}
+
+.right-content {
+    flex: 1;
+    padding-left: 40px; /* Add padding to create space between content and image */
+    margin-left: 50px; /* Add margin to create space between content and image */
+}
+
+.hero-image {
+    position: absolute;
+    top: 49%;
+    right: 0px;
+    transform: translateY(-80%);
+    width: 350px; /* Adjust the width as needed */
+    height: 360px;
+}
+.hero-image2 {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    transform: translateX(-10%);
+    width: 350px; /* Adjust the width as needed */
+    height: 360px;
+}

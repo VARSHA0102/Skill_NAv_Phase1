@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Internal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    
+</head>
+<body>
+    <div class="background">
+        <div class="gradient"></div>
+        
+    </div>
+
+    <header>
+        <h1>Java Program Internal</h1>
+        <p>Understanding the internal workings of a Java program, from source code to execution.</p>
+    </header>
+
+    <section class="content">
+        <h2>How a Java Program Works Internally</h2>
+        <p>When you write and run a Java program, several processes happen behind the scenes. Let's break it down step by step:</p>
+
+        <h3>1. Writing the Source Code</h3>
+        <p>You start by writing your Java program in a .java file. This file contains your source code, which is human-readable and written in the Java programming language.</p>
+
+        <h3>2. Compilation</h3>
+        <p>The Java Compiler (javac) takes your .java file and compiles it into bytecode. This bytecode is stored in a .class file and is not human-readable. Bytecode is a set of instructions that the Java Virtual Machine (JVM) can understand and execute.</p>
+
+        <h3>3. Java Virtual Machine (JVM)</h3>
+        <p>The JVM is responsible for executing the bytecode. It reads the .class file and interprets the bytecode, converting it into machine code that can be executed by the underlying hardware (CPU). The JVM acts as an intermediary between the bytecode and your operating system.</p>
+
+        <h3>4. Execution</h3>
+        <p>Once the JVM has interpreted the bytecode, your program runs, and you see the output, such as "Hello, Java!" in the console.</p>
+
+        <h3>5. Just-In-Time (JIT) Compilation</h3>
+        <p>To improve performance, the JVM includes a Just-In-Time (JIT) compiler. The JIT compiler converts frequently executed bytecode into native machine code, which allows the program to run faster by skipping the interpretation step for those parts of the code.</p>
+
+        <h2>Summary</h2>
+        <p>In summary, the process involves writing your code, compiling it into bytecode, and then running that bytecode on the JVM, which interprets or compiles it into machine code for execution. This process ensures that Java programs can run on any device that has a compatible JVM, adhering to Java's "write once, run anywhere" principle.</p>
+    </section>
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+        <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-btn" class="btn animate-button" onclick="location.href='Hello_Java_Program.html'">Preview Page</button>
+    <button id="next-btn" class="btn animate-button" onclick="location.href='How_to_Set_a_Path.html'">Next</button>
+
+
+
+    <footer>
+        <p>Created with ♥ to help you understand the inner workings of Java programs.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>

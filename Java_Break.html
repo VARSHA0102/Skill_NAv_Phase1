@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Break Statement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hello_Java_Program.css">
+    <link rel="stylesheet" href="P-N_audio_b.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
+        }
+        header{
+            border-bottom: 2px dotted #03A9F4;
+        }
+        .gradient {
+            background: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
+        }
+        header h1 {
+            color: #03A9F4;
+        }
+        .content h2 {
+            color: #03A9F4;
+        }
+        footer{
+            background-color: #03A9F4;
+        }
+        
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Java Break Statement</h1>
+        <p>Understanding the break statement in Java with examples and explanations.</p>
+    </header>
+
+    <section class="content">
+        <h2>What is the Break Statement?</h2>
+        <p>The <strong>break</strong> statement in Java is used to terminate a loop or switch statement prematurely. When a break statement is encountered, the control immediately exits the loop or switch and continues with the next statement following the loop or switch.</p>
+
+        <h2>Break Statement in Loops</h2>
+        <p>The break statement can be used in all looping structures in Java such as <strong>for</strong>, <strong>while</strong>, and <strong>do-while</strong> loops. It is commonly used when you want to terminate a loop based on a certain condition.</p>
+
+        <h2>Example 1: Using Break in a For Loop</h2>
+        <p>The following example demonstrates the use of the break statement in a for loop:</p>
+        <pre><code>public class BreakExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) {
+                break;  // Exit the loop when i equals 5
+            }
+            System.out.println(i);
+        }
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The loop starts from 1 and goes up to 10.</li>
+            <li>When the value of <code>i</code> reaches 5, the break statement is executed, and the loop terminates.</li>
+            <li>As a result, only numbers from 1 to 4 are printed.</li>
+        </ul>
+
+        <h2>Break Statement in Switch Case</h2>
+        <p>The break statement is also used in switch cases to terminate a case block and prevent fall-through to subsequent cases.</p>
+
+        <h2>Example 2: Using Break in Switch Case</h2>
+        <p>Here’s an example of how the break statement is used in a switch case:</p>
+        <pre><code>public class SwitchCaseExample {
+    public static void main(String[] args) {
+        int day = 3;
+        String dayName;
+
+        switch (day) {
+            case 1:
+                dayName = "Sunday";
+                break;
+            case 2:
+                dayName = "Monday";
+                break;
+            case 3:
+                dayName = "Tuesday";
+                break;
+            case 4:
+                dayName = "Wednesday";
+                break;
+            default:
+                dayName = "Invalid day";
+                break;
+        }
+
+        System.out.println("Day: " + dayName);
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The variable <code>day</code> is set to 3.</li>
+            <li>The switch case checks the value of <code>day</code>.</li>
+            <li>When <code>day</code> equals 3, the break statement exits the switch block, preventing any further cases from being executed.</li>
+            <li>The output will be "Day: Tuesday".</li>
+        </ul>
+
+        <h2>Break Statement in Nested Loops</h2>
+        <p>The break statement can also be used in nested loops to exit from the inner loop or even from multiple loops.</p>
+
+        <h2>Example 3: Break in Nested Loops</h2>
+        <p>In this example, the break statement is used to exit a nested loop:</p>
+        <pre><code>public class NestedLoopBreakExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 2) {
+                    break;  // Exit the inner loop
+                }
+                System.out.println("i = " + i + ", j = " + j);
+            }
+        }
+    }
+}</code></pre>
+
+        <h2>Explanation:</h2>
+        <p>In this example:</p>
+        <ul>
+            <li>The outer loop runs for <code>i</code> from 1 to 3, and the inner loop runs for <code>j</code> from 1 to 3.</li>
+            <li>When <code>i</code> equals 2 and <code>j</code> equals 2, the break statement exits the inner loop.</li>
+            <li>The output will skip the case where <code>i = 2</code> and <code>j = 2</code>.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>The break statement is a powerful tool in Java that allows you to control the flow of your loops and switch statements. It helps you exit loops or switch cases prematurely, making your code more flexible and easier to manage.</p>
+    </section>
+           <!-- Audio Control -->
+        <div class="audio-control">
+            <img src="images\audio-char.jpg" class="audio-button" id="audio-btn" alt="Audio Icon">
+            <button class="cancel-audio btn btn-danger" id="cancel-btn">Cancel</button>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button id="prev-btn" class="btn animate-button" onclick="location.href='Java_Do_While_Loop.html'">Preview Page</button>
+        <button id="next-btn" class="btn animate-button" onclick="location.href='Java_Continue.html'">Next</button>
+    
+
+    <footer>
+        <p>Continue exploring Java control statements to master your programming skills.</p>
+    </footer>
+    <script src="audioCharscript.js"></script>
+</body>
+</html>
