@@ -1,87 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBR Academy - Do it now</title>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .hero-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+            z-index: 2;
+        }
+
+        .show-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0.7;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: bubbleFloat 10s infinite ease-in-out;
+        }
+
+        .bubble-1 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 15%;
+            animation-duration: 8s;
+        }
+
+        .bubble-2 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 25%;
+            animation-duration: 10s;
+        }
+
+        .bubble-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            right: 20%;
+            animation-duration: 12s;
+        }
+
+        .bubble-4 {
+            width: 180px;
+            height: 180px;
+            bottom: 10%;
+            left: 60%;
+            animation-duration: 14s;
+        }
+
+        @keyframes bubbleFloat {
+            0% {
+                transform: translateY(0px);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 0.7;
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-btn {
+            padding: 0.75rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            background-color: #fff;
+            color: #1c92d2;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(28, 146, 210, 0.5);
+        }
+
+        .start-btn:hover {
+            background-color: #1c92d2;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(28, 146, 210, 0.6);
+        }
+
+        .robot-icon {
+            position: absolute;
+            bottom: 0;
+            left: -100px;
+            width: 100px;
+            height: 100px;
+            background: url('https://img.icons8.com/ios-filled/100/1c92d2/robot.png') no-repeat center;
+            background-size: contain;
+            animation: iconMove 3s ease-out forwards;
+        }
+
+        @keyframes iconMove {
+            0% {
+                left: -150px;
+                opacity: 0;
+            }
+            60% {
+                left: calc(50% - 50px);
+                opacity: 1;
+            }
+            100% {
+                left: calc(50% - 50px);
+                opacity: 1;
+            }
+        }
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            width: 30px;
+            height: 24px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transition: all 0.3s;
+        }
+
+        /* Animation for hamburger menu lines */
+        .hamburger.active div:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+        /* Mobile menu styles */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #4c9fca;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-in-out;
+        }
+
+        .mobile-nav a {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .mobile-nav a:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .mobile-nav a:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .mobile-nav a:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .mobile-nav a:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .mobile-nav a:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* Show hamburger menu on small screens */
+        @media (max-width: 767px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav {
+                display: none;
+            }
+        }
+
+        /* Updated nav bar color */
+        .header {
+            background-color: #4c9fca;
+        }
+        
+        
+        /* trainer css*/
+        .trainers-section {
+            padding: 60px 0;
+            background-color: #ffffff; /* White background for content area */
+            border-top: 5px solid #1c92d2; /* Accent color for the top border */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .trainer-card {
+            position: relative;
+            background: #f8f9fa; /* Slightly off-white background for cards */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #e9ecef;
+        }
+        .trainer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .trainer-img-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #1c92d2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .trainer-img {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .trainer-card:hover .trainer-img {
+            transform: scale(1.1);
+        }
+        .trainer-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #333; /* Dark gray for better readability */
+            text-align: center;
+        }
+        .trainer-role {
+            font-size: 1.2rem;
+            color: #666; /* Medium gray for role text */
+            text-align: center;
+        }
+        .trainer-bio {
+            font-size: 1rem;
+            color: #444; /* Darker gray for bio text */
+            margin: 15px 0;
+            text-align: center;
+        }
+        .trainer-links {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .trainer-link {
+            margin: 0 10px;
+            color: #1c92d2;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .trainer-link:hover {
+            color: #155a8a;
+        }
+        .contact-info {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .contact-info p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        
+    </style>
 </head>
+
 <body>
-    <header class="header">
-        <div class="logo">BBR Academy</div>
-        <nav class="nav">
-            <a href="#">About</a>
+    <header class="header d-flex justify-content-between align-items-center p-3 position-relative">
+        <div class="logo text-white">BBR Academy</div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger d-md-none">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <nav class="mobile-nav d-md-none">
+            <a href="#About">About</a>
             <a href="#">My Dashboard</a>
-            <a href="#">Problem Statement</a>
-            <a href="#">Leader Board</a>
+            <a href="Problem_Statement-intro1.html">Problem Statement</a>
+            <a href="LeaderBoard.html">Leader Board</a>
+            <a href="#Trainer-Info">Trainer Info</a>
+            <a href="feedbackC.html">feedback</a>
+            <a href="">Report</a>
+            <button class="btn btn-light mt-2" class="signin-btn btn btn-light d-none d-md-inline" onclick="location.href='LoginSignUp.html'">Login</button>
         </nav>
-        <button class="signin-btn">Login</button>
+
+        <!-- Regular Nav Menu -->
+        <nav class="nav d-none d-md-flex">
+            <a href="#About" class="text-white mx-2">About</a>
+            <a href="#" class="text-white mx-2">My Dashboard</a>
+            <a href="Problem_Statement-intro1.html" class="text-white mx-2">Problem Statement</a>
+            <a href="LeaderBoard.html" class="text-white mx-2">Leader Board</a>
+            <a href="#Trainer-Info">Trainer Info</a>
+            <a href="feedbackC.html">feedback</a>
+            <a href="Report.html">Report</a>
+        </nav>
+        <button class="signin-btn btn btn-light d-none d-md-inline" onclick="location.href='LoginSignUp.html'">Login</button>
     </header>
 
     <section class="hero">
-        <h1>Skill Up! Level Up!!</h1>
-        <p>Here you can learn what you like. Don't worry about the concept; we make it easy.</p>
-        <button class="start-btn">Explore</button>
-        <img src="images/front-pg1.png" alt="Hero Image" class="hero-image">
-        <img src="images/front-pg2.png" alt="Hero Image" class="hero-image2">
+        <!-- Floating Bubbles -->
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="robot-icon"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Skill Up! Level Up!!</h1>
+                <p>Unlock your potential. Learn new skills effortlessly with our intuitive platform.</p>
+                <button class="start-btn">Explore</button>
+            </div>
+        </div>
     </section>
 
-    <section class="syllabus">
-        <h2>Syllabus of Courses</h2>
-        <div class="syllabus-items">
-            <div onclick="location.href='javaLearningPath.html'" id="java-section" class="syllabus-item">
-                <img src="images/java-logo.png" alt="Java Logo">
-                <h3>BBR01</h3>
-                <h4>JAVA</h4>
-                <p>Our core Java programming tutorial is designed for students and working professionals. Java is an object-oriented, class-based, concurrent, secured and general-purpose computer-programming language. It is a widely used robust technology.</p>
-            </div>
-            <div id="net-section" class="syllabus-item" onclick="location.href='dotNetLearningPath.html'">
-                <img src="images/dotnet-logo.png" alt=".NET Logo">
-                <h3>BBR02</h3>
-                <h4>.NET</h4>
-                <p>. NET is an open-source platform for building desktop, web, and mobile applications that can run natively on any operating system. The . NET system includes tools, libraries, and languages that support modern, scalable, and high-performance software development.</p>
-            </div>
-            <div id="ds-section" class="syllabus-item" onclick="location.href='DeLearningPath.html'">
-                <img src="images/de-logo.jpeg" alt="Data Engineering Logo">
-                <h3>BBR03</h3>
-                <h4>DATA ENGINEERING</h4>
-                <p>Data engineering is the discipline which creates data collection, storage, transformation, and analysis processes for large amounts of raw data, structured data, semi-structured data, and unstructured data (e.g., Big Data) so that data science professionals can draw valuable insights from it.</p>
+    <section class="syllabus py-5 bg-white text-center">
+        <div class="container">
+            <h2>Syllabus of Courses</h2>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-4 col-sm-6 mb-4" onclick="location.href='javaLearningPath.html'">
+                    <div class="syllabus-item p-4 border rounded bg-light">
+                        <img src="images/java-logo.png" alt="Java Logo" class="img-fluid mb-3">
+                        <h3>BBR01</h3>
+                        <h4>JAVA</h4>
+                        <p>Our core Java programming tutorial is designed for students and working professionals. Java is
+                            an object-oriented, class-based, concurrent, secured, and general-purpose computer-programming
+                            language. It is a widely used robust technology.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4" onclick="location.href='dotNetLearningPath.html'">
+                    <div class="syllabus-item p-4 border rounded bg-light">
+                        <img src="images/dotnet-logo.png" alt=".NET Logo" class="img-fluid mb-3">
+                        <h3>BBR02</h3>
+                        <h4>.NET</h4>
+                        <p>.NET is an open-source platform for building desktop, web, and mobile applications that can run
+                            natively on any operating system. The .NET system includes tools, libraries, and languages that
+                            support modern, scalable, and high-performance software development.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4" onclick="location.href='DeLearningPath.html'">
+                    <div class="syllabus-item p-4 border rounded bg-light">
+                        <img src="images/de-logo.jpeg" alt="Data Engineering Logo" class="img-fluid mb-3">
+                        <h3>BBR03</h3>
+                        <h4>DATA ENGINEERING</h4>
+                        <p>Data engineering is the discipline that creates data collection, storage, transformation, and
+                            analysis processes for large amounts of raw data, structured data, semi-structured data, and
+                            unstructured data (e.g., Big Data) so that data science professionals can draw valuable insights
+                            from it.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- New Course Procedure Section -->
-    <section class="course-procedure">
-        <div class="left-content">
-            <p>Hello! I'm Guve, your reading assistant. It's nice to meet you in the BBR Learning Academy. When you see my icon, feel free to click on it, and I'll be happy to read the page for you.
-
-                Welcome to our course! To get started, please sign up. During the signup process, you'll have the option to choose which course you'd like to take. If you're unsure about which course suits you best, I'm here to help. Based on your interests and preferences, I can recommend a course that aligns with your goals.
-                
-                Let's get started on this learning journey together! </p>
+    <section class="course-procedure py-5 bg-light">
+        <div class="container" id="About">
+            <div class="row">
+                <div class="col-md-4 left-content">
+                    <p>Hello! I'm Guve, your reading assistant. It's nice to meet you in the BBR Learning Academy. When you
+                        see my icon, feel free to click on it, and I'll be happy to read the page for you.
+                        Welcome to our course! To get started, please sign up. During the signup process, you'll have the
+                        option to choose which course you'd like to take. If you're unsure about which course suits you
+                        best, I'm here to help. Based on your interests and preferences, I can recommend a course that
+                        aligns with your goals.
+                        Let's get started on this learning journey together!</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="procedure-image-container">
+                        <img src="images/audio-char.jpg" alt="Center Image" class="center-image">
+                        <div class="animated-box" style="top: 10%; left: -80px;">Sign Up</div>
+                        <div class="animated-box" style="top: 50%; left: -120px;">Choose Course</div>
+                        <div class="animated-box" style="top: 90%; left: -80px;">Start Learning</div>
+                        <div class="animated-box" style="top: 30%; right: -100px;">Practice</div>
+                        <div class="animated-box" style="top: 60%; right: -60px;">Take Quiz</div>
+                        <div class="animated-box" style="top: 90%; right: -120px;">Earn Certificate</div>
+                    </div>
+                </div>
+                <div class="col-md-4 right-content">
+                    <p>Hi! I’m Guve, your guide to the BBR Learning Academy. I’m here to support you through the entire
+                        learning process. Whether you’re a beginner or an experienced learner, I’ll provide you with the
+                        tools and resources you need to succeed. If you have any questions or need help, just click on my
+                        icon, and I’ll be happy to assist you.
+                        Together, we can make learning a rewarding and enjoyable experience. Let's embark on this journey
+                        and achieve your learning goals!</p>
+                </div>
+            </div>
         </div>
-        <div class="procedure-image-container">
-            <img src="images/audio-char.jpg" alt="Center Image" class="center-image">
-            <div class="animated-box" style="top: 10%; left: -80px;">Sign Up</div>
-            <div class="animated-box" style="top: 50%; left: -120px;">Choose Course</div>
-            <div class="animated-box" style="top: 90%; left: -80px;">Start Learning</div>
-            <div class="animated-box" style="top: 30%; right: -100px;">Practice</div>
-            <div class="animated-box" style="top: 70%; right: -120px;">Complete Project</div>
-            <div class="animated-box" style="top: 10%; right: -80px;">Get Certified</div>
-        </div>
-        <div class="right-content">
-            Welcome to the course! We encourage you to take your time to thoroughly understand each concept. If you encounter any difficulties or have questions, please don't hesitate to submit them through the feedback form. Our team will respond promptly to address your queries.
-
-            To reinforce your learning, practice the questions provided in each module. Your progress will be tracked as follows:
-            
-            - Completing one topic: 1 point
-            - Solving problems: 5 points
-            
-            You can monitor your score on the leaderboard, which displays rankings and scores for all participants. Upon completing the course, you will receive a certificate of completion.
-            
-            Remember, practice is key to mastering the material. Take your time, and don't hesitate to reach out if you need assistance. Good luck!        </div>
     </section>
+        
+    <section class="trainers-section">
+        <div class="container" id="Trainer-Info">
+            <h2 class="mb-5 text-center">Meet Our Trainers</h2>
+            <div class="row">
+                <!-- Trainer: Java -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="trainer-card">
+                        <div class="trainer-img-wrapper">
+                            <img src="images/trainer-java.jpg" alt="Java Trainer" class="trainer-img">
+                        </div>
+                        <div class="trainer-info">
+                            <h3 class="trainer-name">Ms. K. Zara</h3>
+                            <p class="trainer-role">Java Specialist</p>
+                            <p class="trainer-bio">Our Java expert is dedicated to helping you master Java programming with deep insights and hands-on experience.</p>
+                            <div class="trainer-links">
+                                <a href="https://www.linkedin.com/in/trainer-java" target="_blank" class="trainer-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="mailto:trainer-java@example.com" class="trainer-link"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Trainer: .NET -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="trainer-card">
+                        <div class="trainer-img-wrapper">
+                            <img src="images/trainer-dotnet.jpg" alt=".NET Trainer" class="trainer-img">
+                        </div>
+                        <div class="trainer-info">
+                            <h3 class="trainer-name">Ms. S. Meera</h3>
+                            <p class="trainer-role">Senior .NET Developer</p>
+                            <p class="trainer-bio">Our .NET provides comprehensive guidance on .NET technologies to enhance your skills and knowledge.</p>
+                            <div class="trainer-links">
+                                <a href="https://www.linkedin.com/in/trainer-dotnet" target="_blank" class="trainer-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="mailto:trainer-dotnet@example.com" class="trainer-link"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Trainer: Data Engineering -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="trainer-card">
+                        <div class="trainer-img-wrapper">
+                            <img src="images/trainer-data-engineering.jpg" alt="Data Engineering Trainer" class="trainer-img">
+                        </div>
+                        <div class="trainer-info">
+                            <h3 class="trainer-name">Ms. S. Thara</h3>
+                            <p class="trainer-role">Data Engineering Expert</p>
+                            <p class="trainer-bio">Our Data Engineering expert specializes in advanced data solutions to empower your understanding and skills in data management.</p>
+                            <div class="trainer-links">
+                                <a href="https://www.linkedin.com/in/trainer-data-engineering" target="_blank" class="trainer-link"><i class="bi bi-linkedin"></i></a>
+                                <a href="mailto:trainer-data-engineering@example.com" class="trainer-link"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <p>To add a trainer to our platform, please send an email to the respective Senior Trainer (Java, .NET, Data Engineering). They will guide you through the process. Otherwise Mail to this ID <a href="mailto:sunshine.theway43@gmail.com" class="trainer-link"><i class="bi bi-envelope"></i>sunshine.theway43@gmail.com</a> Admin will guide you</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="footer bg-dark text-white text-center py-3">
+        <p>Believe in yourself and all that you are. Know that there is something inside you that is greater than any
+            obstacle.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const robotIcon = document.querySelector('.robot-icon');
+            const heroContent = document.querySelector('.hero-content');
 
-    <script src="scripts.js"></script>
+            // Trigger the content display when the robot icon animation finishes
+            robotIcon.addEventListener('animationend', function() {
+                heroContent.classList.add('show-content');
+            });
+        });
+
+        // JavaScript to toggle the hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('d-flex');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 767) {
+                mobileNav.classList.remove('d-flex');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
 </body>
+
 </html>
